@@ -1,0 +1,20 @@
+<!--
+<%= form_tag("/users", method: "patch") do %>
+<%= label_tag('username', "Username")%>
+<%= text_field_tag('username') %>
+<%= label_tag('email', "Email")%>
+<%= text_field_tag('email')%>
+<%= label_tag('password', "password")%>
+<%= password_field_tag('password')%>
+<%= submit_tag("Submit")%>
+<% end %>
+-->
+<%= form_with model: @user do |form|%>
+<%= label_tag(:user_name, 'Username: ')%>
+<%= form.text_field :name, value: "Your Username"%>
+<%= label_tag(:user_email, 'Email: ')%>
+<%= form.text_field :email, value: "example@gmail.com"%>
+<%= label_tag(:user_password, 'Password: ')%>
+<%= form.text_field :password, value: "password"%>
+<%= form.submit "Create"%>
+<% end %>
