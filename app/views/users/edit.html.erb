@@ -10,11 +10,21 @@
 <% end %>
 -->
 <%= form_with model: @user do |form|%>
-<%= label_tag(:user_name, 'Username: ')%>
-<%= form.text_field :name, value: "Your Username"%>
+<% if @user.errors.any? %>
+<div id = "error_explanation">
+  <h2><%= pluralize(@user.errors.count, "error")%> prohibited this article from from being saved:</h2>
+</div>
+<ul>
+  <% @user.errors.each do |error|%>
+  <li><%= error.full_message %></li>
+  <% end %>
+</ul>
+<% end %>
+<%= label_tag(:user_username, 'Username: ')%>
+<%= form.text_field :username, placeholder: "Your Username"%>
 <%= label_tag(:user_email, 'Email: ')%>
-<%= form.text_field :email, value: "example@gmail.com"%>
+<%= form.text_field :email, placeholder: "example@gmail.com"%>
 <%= label_tag(:user_password, 'Password: ')%>
-<%= form.text_field :password, value: "password"%>
+<%= form.text_field :password, placeholder: "password"%>
 <%= form.submit "Create"%>
 <% end %>
