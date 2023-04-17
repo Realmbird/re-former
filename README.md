@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The database is already created you may check variables with rails c
 
-Things you may want to cover:
+How to use
 
-* Ruby version
+Create:
+1. Use rails s
+2. localhost:3000/users/new
 
-* System dependencies
+Edit:
+1. Use rails s
+2. localhost:3000/users/:id/edit
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Only C and U of CRUD are added other routes like localhost:3000/users will not work
